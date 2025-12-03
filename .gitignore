@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environments
+venv/
+venv_local/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Model artifacts (large files - keep only essential)
+models/v1/*.s3
+models/v1/*.tmp
+models/v1/*.bak
+
+# Data files (too large for Git)
+data/raw/*.csv
+data/processed/*.csv
+
+# Results (generated files)
+results/benchmarks/*.csv
+results/eda/*.png
+results/eda/*.json
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# AWS
+.aws/
+*.pem
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
+

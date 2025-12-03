@@ -1,0 +1,7 @@
+# Requirements for SageMaker Training
+# These packages will be installed in the container before training starts
+# Using versions compatible with Python 3.8 and scikit-learn 1.0
+
+xgboost==1.7.6
+lightgbm==3.3.5
+

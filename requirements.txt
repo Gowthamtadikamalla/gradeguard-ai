@@ -1,0 +1,58 @@
+# Web Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+
+# Data Validation
+pydantic==2.9.0
+pydantic-settings==2.5.0
+
+# Machine Learning - Version compatibility strategy
+# 
+# IMPORTANT: Python 3.13 compatibility issues
+# - scikit-learn 1.0.2: No wheels for Python 3.13, build fails
+# - numpy 1.24.4: No wheels for Python 3.13, build fails
+# - Models trained with scikit-learn 1.0.2 + numpy 1.24.4 cannot be loaded with numpy 1.26.4
+#   (NumPy random state format changed between 1.24.4 and 1.26.4)
+#
+# SOLUTION OPTIONS:
+# 1. Use Python 3.11 or 3.12 for local development (recommended for benchmarking)
+#    - Can install scikit-learn 1.0.2 and numpy 1.24.4 (matches training/Lambda)
+# 2. For Python 3.13: Keep current versions, but local model loading will fail
+#    - Use --skip-local flag in benchmarking script to only test AWS
+#
+# Current setup (Python 3.13):
+scikit-learn>=1.5.2  # Python 3.13 compatible (but model loading fails due to NumPy)
+pandas==2.2.3
+numpy==1.26.4  # Python 3.13 compatible (but incompatible with model's NumPy 1.24.4 state)
+joblib==1.4.0
+
+# Gradient Boosting Models
+xgboost==2.1.3
+lightgbm==4.5.0
+
+# Utilities
+python-dotenv==1.0.1
+requests==2.32.3
+
+# AWS (for Phase 2)
+boto3==1.35.0
+mangum==0.18.0
+sagemaker==2.210.0
+
+# AI Agent
+httpx<0.28
+huggingface-hub>=1.1.5
+shap==0.50.0
+numba==0.62.1
+llvmlite==0.45.1
+
+# Data Processing
+openpyxl==3.1.5
+
+# Logging & Monitoring
+python-json-logger==3.2.0
+
+# Data Visualization (for EDA)
+matplotlib>=3.9.0  # Updated for Python 3.13 compatibility
+seaborn>=0.13.2

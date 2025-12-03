@@ -1,0 +1,40 @@
+{
+  "model_name": "gradient_boosting",
+  "validation_metrics": {
+    "accuracy": 0.87515,
+    "precision": 0.8900586756077117,
+    "recall": 0.8995747132279436,
+    "f1_score": 0.8947913945512308,
+    "confusion_matrix": [
+      [
+        34423,
+        6558
+      ],
+      [
+        5927,
+        53092
+      ]
+    ],
+    "pass_rate": 0.59019,
+    "predicted_pass_rate": 0.5965
+  },
+  "test_metrics": {
+    "accuracy": 0.87244,
+    "precision": 0.8865121706300454,
+    "recall": 0.8975492005793315,
+    "f1_score": 0.8919965455150964,
+    "confusion_matrix": [
+      [
+        103705,
+        20230
+      ],
+      [
+        18038,
+        158027
+      ]
+    ],
+    "pass_rate": 0.5868833333333333,
+    "predicted_pass_rate": 0.59419
+  },
+  "feature_count": 22
+}

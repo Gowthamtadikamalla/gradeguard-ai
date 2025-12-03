@@ -1,0 +1,33 @@
+# AWS Lambda Python base image
+# Using Python 3.10 because scikit-learn 1.0.2 has pre-built wheels for 3.10
+# but not for 3.11 (would require compilation which fails due to Cython compatibility)
+FROM public.ecr.aws/lambda/python:3.10
+
+# Set working directory
+WORKDIR ${LAMBDA_TASK_ROOT}
+
+# Install system dependencies for building Python packages
+# Note: Lambda base image uses Amazon Linux 2 with GCC 7.3.1
+# NumPy 2.x requires GCC 9.3+, so we'll use numpy 1.x which has pre-built wheels
+RUN yum update -y && \
+    yum install -y gcc gcc-c++ && \
+    yum clean all && \
+    rm -rf /var/cache/yum
+
+# Copy Lambda-specific requirements and install Python dependencies
+# Upgrade pip first for better compatibility
+# Install packages in order: numpy first, then numba/llvmlite, then rest
+# numba 0.57.1 requires numpy < 1.25, so we use numpy 1.24.4
+COPY requirements_lambda.txt requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir "numpy==1.24.4" && \
+    pip install --no-cache-dir "llvmlite==0.40.0" && \
+    pip install --no-cache-dir "numba==0.57.1" && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY . .
+
+# Set the CMD to your handler
+CMD [ "app.handler" ]
+
