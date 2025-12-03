@@ -55,6 +55,21 @@ Educational institutions often struggle to identify students at risk of poor aca
   - Test: 999,998 rows (~158 MB)
 - **Location**: `data/raw/` folder (DO NOT MODIFY)
 
+**Important Note**: The dataset files are NOT included in this repository due to their large size. You need to download the dataset separately and place the files in the `data/raw/` directory before running the project.
+
+### Obtaining the Dataset
+
+1. Download the Student Performance Dataset from Kaggle
+2. Extract the CSV files (train.csv, validation.csv, test.csv)
+3. Place them in the `data/raw/` folder:
+   ```
+   data/raw/
+   ├── train.csv
+   ├── validation.csv
+   └── test.csv
+   ```
+4. Ensure the files are named exactly as shown above
+
 ### Features (21 total)
 
 **Demographic:**
@@ -142,6 +157,7 @@ Cloud_P/
 - **Docker & Docker Compose**: For containerized deployment
 - **RAM**: 8+ GB (for full dataset) or 4+ GB (for development)
 - **Disk Space**: ~5 GB (for dataset, models, and dependencies)
+- **Dataset**: Student Performance Dataset from Kaggle (not included in repository - see [Dataset](#dataset) section for download instructions)
 
 ### AWS Cloud Deployment
 
@@ -182,6 +198,8 @@ pip install -r requirements.txt
 ```
 
 ### Step 3: Prepare Data
+
+**Note**: Before running this step, ensure you have downloaded the Student Performance Dataset from Kaggle and placed the CSV files (train.csv, validation.csv, test.csv) in the `data/raw/` directory. See [Dataset](#dataset) section above for detailed instructions.
 
 ```bash
 # Process the dataset (creates train/validation/test splits)
