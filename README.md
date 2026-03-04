@@ -18,7 +18,6 @@ A comprehensive machine learning system that predicts whether a student is at ri
 - [Architecture](#architecture)
 - [Monitoring](#monitoring)
 - [Troubleshooting](#troubleshooting)
-- [Team Members](#team-members)
 
 ## Project Overview
 
