@@ -1,4 +1,6 @@
-# Student Performance Prediction System
+# GradeGuard AI
+
+End-to-end Student Risk Prediction MLOps, FastAPI + Docker, AWS SageMaker to Lambda, SHAP Explainability
 
 A comprehensive machine learning system that predicts whether a student is at risk of poor academic performance or in good academic standing based on their academic and personal data. This project implements a complete MLOps pipeline with both local and AWS cloud deployments, demonstrating end-to-end machine learning operations from data preparation to production deployment.
 
