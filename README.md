@@ -21,9 +21,21 @@ A comprehensive machine learning system that predicts whether a student is at ri
 
 ## Project Overview
 
-### Problem Statement
+## Problem
 
-Educational institutions often struggle to identify students at risk of poor academic performance in advance. This project builds a predictive model to forecast whether students will be at-risk or in good academic standing based on demographic and behavioral features. The system uses a two-feature labeling strategy: Pass (good standing) requires GPA >= 2.0 AND AvgTestScore >= 73; all other students are labeled as Fail (at-risk). AttendanceRate is used as a predictive feature but not in the target labeling to avoid data leakage.
+Schools and universities often react to academic issues after grades drop, when it is already late to intervene. **GradeGuard AI** proactively flags students who may be trending toward poor outcomes using demographic and behavioral signals, so advisors and support teams can prioritize early outreach.
+
+The system predicts **Student Status**: **At-Risk** vs **Good Standing** from student features. Labels are generated using a **consistent, rules-based definition** derived from academic performance signals, while ensuring **AttendanceRate is used only as a predictive feature** (not for labeling) to avoid data leakage.
+
+## Tech Stack
+
+- **Python**, **pandas**, **NumPy**, **scikit-learn** (data prep, modeling, evaluation)
+- **FastAPI** (inference API)
+- **Docker** (containerization, reproducible deployment)
+- **AWS SageMaker** (model training and packaging)
+- **AWS Lambda + API Gateway** (serverless inference)
+- **SHAP** (model explainability)
+- **GitHub** (versioning, reproducible workflow)
 
 ### High-Level Approach
 
